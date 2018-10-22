@@ -14,7 +14,7 @@ class MornigSpec extends AsyncFunSpec with Matchers with MockitoSugar {
       val morningMusicRepo = mock[MorningMusicRepository]
       when(morningMusicRepo.list()).thenReturn(Future(titles))
       val morningMusic = new MorningMusic(morningMusicRepo)
-      val titlesFuture = morningMusic.getNewTitle()
+      val titlesFuture = morningMusic.getNewTitles()
       titlesFuture.map(title => {
         assert(title == titles)
       })
